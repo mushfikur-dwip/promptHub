@@ -108,14 +108,14 @@ export function PromptCard({ prompt, className }: PromptCardProps) {
     <>
       <Card
         className={cn(
-          "group h-fit transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:-translate-y-1",
-          "border-border/50 hover:border-purple-300/50 bg-card/50 backdrop-blur-sm overflow-hidden",
+          "group transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:-translate-y-1",
+          "h-auto border-border/50 hover:border-purple-300/50 bg-card/50 backdrop-blur-sm overflow-hidden",
           className
         )}
       >
         {/* Image Section */}
         {prompt.image_url && (
-          <div className="relative h-48 overflow-hidden">
+          <div className="relative h-auto overflow-hidden">
             <img
               src={prompt.image_url}
               alt={prompt.title}

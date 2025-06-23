@@ -140,34 +140,34 @@ export default function HomePage() {
                   Publish Your Prompt
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 font-semibold px-8">
+              <Button size="lg" className="bg-white text-purple-600 hover:bg-purple-50 font-semibold px-8">
                 <Search className="w-5 h-5 mr-2" />
                 Browse Prompts
               </Button>
             </div>
             
             {/* Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
+            <div className="grid grid-cols-3 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <BookOpen className="w-5 h-5" />
+                  {/* <BookOpen className="w-5 h-5" /> */}
                   <span className="text-2xl font-bold">{stats.totalPrompts}</span>
                 </div>
-                <p className="text-sm text-purple-100">Curated Prompts</p>
+                <p className="text-sm text-purple-100">Prompts</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <Star className="w-5 h-5" />
+                  {/* <Star className="w-5 h-5" /> */}
                   <span className="text-2xl font-bold">{stats.avgRating.toFixed(1)}</span>
                 </div>
                 <p className="text-sm text-purple-100">Average Rating</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <Users className="w-5 h-5" />
+                  {/* <Users className="w-5 h-5" /> */}
                   <span className="text-2xl font-bold">{stats.totalRatings}</span>
                 </div>
-                <p className="text-sm text-purple-100">Community Reviews</p>
+                <p className="text-sm text-purple-100"> Reviews</p>
               </div>
             </div>
           </div>
@@ -208,15 +208,16 @@ export default function HomePage() {
           {/* Main Content */}
           <div className="lg:col-span-3 space-y-6">
             {/* Search and Filter Controls */}
-            <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20">
+            <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg  border border-white/20">
               <div className="flex flex-col sm:flex-row gap-4">
                 <div className="relative flex-1">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
                   <Input
+                    id='search-prompts'
                     placeholder="Search prompts..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-10 bg-white/50"
+                    className="pl-10 bg-white/50 border-none outline-none focus:ring-2  transition-all"
                   />
                 </div>
                 <div className="flex gap-2">
@@ -325,7 +326,7 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  <div className="grid gap-6 md:grid-cols-2">
+                  <div className="grid gap-6 items-start md:grid-cols-3 ">
                     {filteredPrompts.map((prompt) => (
                       // <Link 
                       //   key={prompt.id} 
@@ -334,7 +335,7 @@ export default function HomePage() {
                       // >
                         <PromptCard 
                           prompt={prompt} 
-                          className="h-full transition-all duration-300 group-hover:scale-[1.02]"
+                          className=" transition-all duration-300 group-hover:scale-[1.02]"
                         />
                       // </Link>
                     ))}

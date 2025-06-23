@@ -80,3 +80,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+#search-prompts:focus{
+
+  /* ring-purple-500 !important; */
+  @apply ring-2 ring-purple-500 !important;
+}
