@@ -299,3 +299,4 @@ export class FirebaseService {
     }
   }
 }
+export { db };
